@@ -1,0 +1,45 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", sans-serif;
+}
+#mySidebar {
+  z-index: 3;
+  width: 300px;
+}
+
+@media screen and (max-width: 1100px) {
+  #mySidebar {
+    z-index: 3;
+    width: 200px;
+  }
+}
+
+nav button {
+  margin: 10px;
+}
+input {
+  border: none;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  background: #e8e8e8;
+  box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+button {
+  border-radius: 16px;
+}
+button:hover {
+  transition: 0.7s;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Тест</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body class="w3-light-grey">
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
+      <span class="w3-bar-item w3-right">Logo</span>
+    </div>
+
+    <nav class="w3-sidebar w3-collapse w3-white" id="mySidebar">
+      <br />
+      <div class="w3-container w3-row">
+        <div class="w3-col s8 w3-bar">
+          <span>Привіт, <strong>Mike</strong></span
+          ><br />
+        </div>
+      </div>
+      <hr />
+      <div class="w3-bar-block">
+        <div class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-truck fa-fw"></i>&nbsp; link1
+        </div>
+        <div class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-tree fa-fw"></i>&nbsp; link2
+        </div>
+        <div class="w3-bar-item w3-button w3-padding">
+          <i class="fa fa-balance-scale fa-fw"></i>&nbsp; link3
+        </div>
+      </div>
+      <button class="w3-button w3-black w3-small" onclick="toggleMenuSize()">
+        Зменшити
+      </button>
+    </nav>
+
+    <div class="w3-main" style="margin-left: 300px; margin-top: 43px">
+      <header class="w3-container" style="padding-top: 22px">
+        <h5>
+          <b><i class="fa fa-diamond"></i> Статистика</b>
+        </h5>
+      </header>
+
+      <div class="w3-row-padding w3-margin-bottom">
+        <div class="w3-container">
+          <h5>Власники котиків</h5>
+          <table id="myTable" class="w3-table-all">
+            <thead>
+              <tr class="w3-blue">
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Бали</th>
+              </tr>
+              <tr class="w3-blue">
+                <th>
+                  <input
+                    type="text"
+                    id="nameInput"
+                    oninput="searchTable(0)"
+                    placeholder="Пошук за ім'ям"
+                  />
+                  <button
+                    class="w3-button w3-black w3-small"
+                    onclick="sortTable(0)"
+                  >
+                    Сортувати
+                  </button>
+                </th>
+                <th>
+                  <input
+                    type="text"
+                    id="surnameInput"
+                    oninput="searchTable(1)"
+                    placeholder="Пошук за прізвищем"
+                  />
+                  <button
+                    class="w3-button w3-black w3-small"
+                    onclick="sortTable(1)"
+                  >
+                    Сортувати
+                  </button>
+                </th>
+                <th>
+                  <input
+                    type="text"
+                    id="pointsInput"
+                    oninput="searchTable(2)"
+                    placeholder="Пошук за балами"
+                  />
+                  <button
+                    class="w3-button w3-black w3-small"
+                    onclick="sortTable(2)"
+                  >
+                    Сортувати
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Артур</td>
+                <td>Юс</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Жанна</td>
+                <td>Котлінска</td>
+                <td>94</td>
+              </tr>
+              <tr>
+                <td>Юлія</td>
+                <td>Корж</td>
+                <td>67</td>
+              </tr>
+              <tr>
+                <td>Богдан</td>
+                <td>Синовій</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>Катря</td>
+                <td>Грай</td>
+                <td>45</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <button id="fetchButton" class="w3-button w3-dark-grey">
+            Більше інформації &nbsp;<i class="fa fa-bug"></i>
+          </button>
+          <div id="factAboutCat"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./custom.js"></script>
+  </body>
+</html>
