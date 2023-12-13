@@ -19,9 +19,6 @@ h5 {
   }
 }
 
-nav button {
-  margin: 10px;
-}
 input {
   border: none;
   padding: 0.2rem;
@@ -39,7 +36,12 @@ input:focus {
 }
 button {
   border-radius: 16px;
+  margin: 7px;
 }
 button:hover {
   transition: 0.7s;
+}
+
+.hidden {
+  display: none;
 }

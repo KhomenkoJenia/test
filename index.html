@@ -20,24 +20,31 @@
       <br />
       <div class="w3-container w3-row">
         <div class="w3-col s8 w3-bar">
-          <span>Привіт, <strong>Mike</strong></span
+          <span class="visibility">Привіт, <strong>Mike</strong></span
           ><br />
         </div>
       </div>
       <hr />
       <div class="w3-bar-block">
         <div class="w3-bar-item w3-button w3-padding">
-          <i class="fa fa-truck fa-fw"></i>&nbsp; link1
+          <i class="fa fa-truck fa-fw"></i>&nbsp;
+          <span class="visibility">link1</span>
         </div>
         <div class="w3-bar-item w3-button w3-padding">
-          <i class="fa fa-tree fa-fw"></i>&nbsp; link2
+          <i class="fa fa-tree fa-fw"></i>&nbsp;
+          <span class="visibility">link2</span>
         </div>
         <div class="w3-bar-item w3-button w3-padding">
-          <i class="fa fa-balance-scale fa-fw"></i>&nbsp; link3
+          <i class="fa fa-balance-scale fa-fw"></i>&nbsp;
+          <span class="visibility">link1</span>
         </div>
       </div>
-      <button class="w3-button w3-black w3-small" onclick="toggleMenuSize()">
-        Зменшити
+      <button
+        class="w3-button w3-black w3-small"
+        onclick="toggleMenuSize()"
+        id="toggleButton"
+      >
+        +
       </button>
     </nav>
 
@@ -57,6 +64,7 @@
                 <th>Ім'я</th>
                 <th>Прізвище</th>
                 <th>Бали</th>
+                <th>Факти о котиках</th>
               </tr>
               <tr class="w3-blue">
                 <th>
@@ -101,6 +109,7 @@
                     Сортувати
                   </button>
                 </th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -108,32 +117,41 @@
                 <td>Артур</td>
                 <td>Юс</td>
                 <td>50</td>
+                <td class="fact-column"></td>
               </tr>
               <tr>
                 <td>Жанна</td>
                 <td>Котлінска</td>
                 <td>94</td>
+                <td class="fact-column"></td>
               </tr>
               <tr>
                 <td>Юлія</td>
                 <td>Корж</td>
                 <td>67</td>
+                <td class="fact-column"></td>
               </tr>
               <tr>
                 <td>Богдан</td>
                 <td>Синовій</td>
                 <td>25</td>
+                <td class="fact-column"></td>
               </tr>
               <tr>
                 <td>Катря</td>
                 <td>Грай</td>
                 <td>45</td>
+                <td class="fact-column"></td>
               </tr>
             </tbody>
           </table>
           <br />
-          <button id="fetchButton" class="w3-button w3-dark-grey">
-            Більше інформації &nbsp;<i class="fa fa-bug"></i>
+          <button
+            id="fetchButton"
+            class="w3-button w3-dark-grey"
+            onclick="fetchFacts()"
+          >
+            Отримати факти &nbsp;<i class="fa fa-bug"></i>
           </button>
           <div id="factAboutCat"></div>
         </div>

@@ -1,5 +1,4 @@
 // Функція для фільтрації та відображення рядків таблиці відповідно до введеного фільтру
-
 function searchTable(column) {
   let input = document.getElementById(
     column === 0 ? "nameInput" : column === 1 ? "surnameInput" : "pointsInput"
@@ -24,7 +23,6 @@ function searchTable(column) {
 }
 
 // Функція для сортування рядків
-
 function sortTable(column) {
   let table = document.getElementById("myTable");
   let rows = table.rows;
@@ -47,30 +45,51 @@ function sortTable(column) {
 }
 
 // отрімання даніх з сайту
-
 function fetchData() {
-  fetch("https://catfact.ninja/fact")
+  return fetch("https://catfact.ninja/fact")
     .then((response) => response.json())
-    .then((data) => {
-      displayAbouCat(data.fact);
+    .then((data) => data)
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
+
+function displayAboutCat(factData, factColumn) {
+  factColumn.innerHTML = factData;
+}
+
+function fetchFacts() {
+  const factColumns = document.querySelectorAll(".fact-column");
+
+  Promise.all(Array.from(factColumns).map(() => fetchData()))
+    .then((facts) => {
+      facts.forEach((data, index) => {
+        const factColumn = factColumns[index];
+        displayAboutCat(data.fact, factColumn);
+      });
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
 }
 
-function displayAbouCat(factData) {
-  const factAboutCat = document.getElementById("factAboutCat");
-  factAboutCat.innerHTML = "<strong>FACT :</strong> " + factData;
-}
-document.getElementById("fetchButton").addEventListener("click", fetchData);
+document.getElementById("fetchButton").addEventListener("click", fetchFacts);
 
 //Зменшення нав
-
 function toggleMenuSize() {
-  var sidebar = document.getElementById("mySidebar");
+  let sidebar = document.getElementById("mySidebar");
+  let button = document.getElementById("toggleButton");
+  let items = document.querySelectorAll(".visibility");
+
   sidebar.classList.toggle("w3-small");
   sidebar.style.width = sidebar.classList.contains("w3-small")
-    ? "150px"
+    ? "50px"
     : "300px";
+
+  button.innerHTML = sidebar.classList.contains("w3-small") ? "-" : "+";
+
+  // Змінюємо видимість елементів
+  items.forEach((item) => {
+    item.classList.toggle("hidden");
+  });
 }
